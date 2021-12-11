@@ -1,0 +1,134 @@
+:root{
+    --boja: #E54B4B;
+    --bojica: #FFA987;
+    --PurpleRecipeCard: #ffffff;
+  }
+
+body{
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.log-box{
+    width: 60%;
+    height: 80%;
+    background-color: var(--boja);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.sing_h1{
+    font-size: 30px;
+    color: white;
+    margin-top: 0px;
+}
+.regex_error{
+    font-weight: bolder;
+    color: #ff0000;
+  }
+
+  .hidden {
+    font-size: 0px !important;
+  }
+[type=text] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid var(--boja);
+    height: 45px;
+    line-height: 45px;  
+    margin-bottom: 10px;
+    font-size: 1em;
+    color:  rgba(0,0,0,.4);
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+  
+  [type=password] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid var(--boja);
+    height: 45px;
+    line-height: 45px;  
+    margin-bottom: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    color: rgba(0,0,0,.4);
+    padding-left: 10px;
+  }
+
+  .dugme{
+    margin-top: 25px;
+    width: 50%;
+    border: 0;
+    background-color:white;
+    border-radius: 5px;
+    height: 50px;
+    color: var(--boja);
+    font-weight: bold;
+    font-size: 1em;
+  }
+  .dugme:hover{
+    background-color: var(--bojica);
+  }
+
+.nazad{
+  margin-top: 25px;
+  width: 50%;
+  border: 0;
+  background-color: var(--boja);
+  border-radius: 5px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+}
+.nazad:hover{
+  background-color: var(--boja);
+}
+  [type='text']:focus {
+    /*outline: none;*/
+    border-color: var(--boja);
+  }
+  .dugme1{
+    margin-top: 25px;
+    width: 50%;
+    border: 0;
+    border-radius: 5px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    background-color:var(--boja);
+    border: 2px dashed white;
+    padding: 1%;
+    text-decoration: none;
+  }
+  .dugme1:hover{
+    background-color: var(--bojica);
+    color: var(--boja);
+  } 
+#dugmenazad{
+  margin-top: 25px;
+  width: 50%;
+  border: 0;
+  background-color:white;
+  border-radius: 5px;
+  height: 50px;
+  color: var(--boja);
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 1%;
+}
+#dugmenazad:hover{
+  background-color: var(--bojica);
+}
