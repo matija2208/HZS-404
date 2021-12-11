@@ -13,7 +13,6 @@ body {
 .slideshow-container {
   height: 100%;
   position: relative;
-  z-index: -1;
 }
 .slika1{
     background-image: url("../../MEDIE/cuprija1.png");
@@ -43,7 +42,6 @@ body {
   .text {font-size: 11px}
 }
 .logo{
-  z-index: 10;
   width: 50%;
   position: relative;
   margin: auto;

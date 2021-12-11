@@ -1,13 +1,13 @@
 
 :root{
-    --boja: #E54B18;
-    --svetlaboja: rgb(247, 138, 102);
-    --font_boja: rgb(160, 60, 26);
+    --boja: #E54B4B;
+    --svetlaboja: #FFA987;
+    --font_boja: #bb5353;
 }
 
 .blok{
     background-color: var(--boja);
-    padding: 50px;
+    padding: 10px;
 }
 
 .linija{
@@ -112,4 +112,9 @@
   
   #check:checked ~ section {
     margin-left: 250px;
+  }
+  .centar{
+    align-items: center;
+    justify-content: center;
+
   }
