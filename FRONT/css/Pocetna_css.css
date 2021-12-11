@@ -1,0 +1,85 @@
+* {box-sizing: border-box;}
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    overflow: hidden;
+}
+.mySlides {
+    height: 100%;
+}
+
+.slideshow-container {
+  height: 100%;
+  position: relative;
+  z-index: -1;
+}
+.slika1{
+    background-image: url("../../MEDIE/cuprija1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.slika2{
+    background-image: url("../../MEDIE/cuprija2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slika3{
+    background-image: url("../../MEDIE/cuprija3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.dot {
+  transition: background-color 0.6s ease;
+  overflow-x: hidden;
+  height: 100%;
+}
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.logo{
+  z-index: 10;
+  width: 50%;
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  justify-content: space-evenly;
+}
+.stranice-div{
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  display: inline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+  }
+.stranice{
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #e54b4bd7;
+  width: 150px;
+  height: 200px;
+  margin: 10px;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+}
+#text-pocetna{
+  font-size: 20px;
+  margin-top: 30px
+}
+.border{
+  border-radius: 10px;
+  border: 5px solid white;
+  padding: 20px;
+  background-color: #e54b4bd7;
+}
