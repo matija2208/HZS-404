@@ -76,10 +76,34 @@ function regex_valid_repeat(entries){
     }
 }
 
+function regex_valid_date(entries){
+    var date = entries.rodjendan_input.value;
+    var dateSplit = date.split("-");
+    var year = dateSplit[0];
+    if(year > new Date().getFullYear() || year == ""){
+        valid_test = false;
+        document.getElementById("ErrorDateWarning").classList.remove("hidden");
+    } else{
+        console.log("validiran datum rodjenja korisnika...");
+        document.getElementById("ErrorDateWarning").classList.add("hidden");
+    }
+
+}
+
 async function registruj(entries){
     var korisnicko_ime = entries.ime_input.value;
     var e_mail_korisnika = entries.mail_input.value;
     var lozinka_korisnika = entries.pass_input.value;
+
+    //NEW NEW NEW NEW NEW NEW NEW NEW
+    var interests = [];
+    var boxes = document.getElementsByClassName("box");
+    
+    for(var i=0; i<boxes.length; i++) {
+        if(boxes[i].checked == true){
+            interests.push(boxes[i].name);
+        }
+     }
 
     var newUser={
         userName:korisnicko_ime,
@@ -120,6 +144,7 @@ async function ValidirajRegister(){
     regex_valid_mail(entries)
     regex_valid_pass(entries);
     regex_valid_repeat(entries);
+    regex_valid_date(entries);
 
     if(valid_test == true){
         var users = await getData();

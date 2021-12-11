@@ -10,6 +10,19 @@ body{
     background-repeat: no-repeat;
 }
 
+.RegexWarning{
+  color: var(--PurpleRecipeCard);
+  font-size: 16px;
+  margin-left: 2%;
+  font-weight: bolder;
+}
+
+.ImportantForm{
+  color: var(--PurpleRecipeCard);
+  font-size: 22px;
+  font-weight: bolder;
+}
+
 .log-box{
     width: 60%;
     height: 80%;
@@ -20,6 +33,15 @@ body{
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
+}
+
+
+
+.centerImg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .sing_h1{
@@ -65,8 +87,24 @@ body{
     padding-left: 10px;
   }
 
+  [type=date] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid var(--boja);
+    height: 45px;
+    line-height: 45px;  
+    margin-bottom: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    color: rgba(0,0,0,.4);
+    padding-left: 10px;
+  }
+
   .dugme{
     margin-top: 25px;
+    text-align: center;
     width: 50%;
     border: 0;
     background-color:white;
