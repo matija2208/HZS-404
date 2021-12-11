@@ -15,10 +15,16 @@
           <h1 class="sing_h1">REGISTRUJ SE</h1><br>
            <form id="forma">
              <!-- IME-->
-            <input type='text' id="ime_input" placeholder='Korisničko ime:'  />
+             <input type='text' id="ime_input" placeholder='Ime:'  />
+             <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
+             <input type='text' id="prezime_input" placeholder='Prezime:'  />
+             <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
+            <input type='text' id="korisnicko_ime_input" placeholder='Korisničko ime:'  />
             <span class="RegexWarning hidden" id="EmptyNameWarning"> Molimo vas da unesete korisnicko ime.</span> <br>
             <span class="RegexWarning hidden" id="ErrorNameWarning"> Ime sme sadrzati samo slova, brojeve i moze biti do 30 karaktera dugacko, bez razmaka.</span> <br>
-            <span class="RegexWarning hidden" id="SameNameWarning"> Ovo korisnicko ime je vec zauzeto.</span>
+            <span class="RegexWarning hidden" id="SameNameWarning"> Ovo korisnicko ime je vec zauzeto.</span><br>
+            <input type='text' id="rodjendan_input" placeholder='Unesite Vaš datum rođenja:'  />
+            <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
             <br><br><br>
             <!-- MAIL-->
             <input type='text' id="mail_input" placeholder='Email:'  />
@@ -26,6 +32,9 @@
             <span class="RegexWarning hidden" id="ErrorMailWarning"> Molimo vas da unesete vazecu e-mail adresu (npr. [name]@example.com).</span> <br>
             <span class="RegexWarning hidden" id="SameMailWarning"> Nalog je vec registrovan na ovoj e-mail adresi.</span>
             <br><br><br>
+            <!--Interesovanja-->
+            <input type='text' id="interesovanja_input" placeholder='Unesite Vaša interesovanja:'  />
+            <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
             <!-- PASS-->
             <input type='password' id="pass_input" placeholder='Lozinka:'  />
             <span class="RegexWarning hidden" id="EmptyPassWarning"> Molimo vas da unesete lozinku vaseg naloga.</span> <br>
