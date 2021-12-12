@@ -124,7 +124,7 @@ async function registruj(entries){
     var ime_korisnika = entries.ime_input.value;
     var prezime_korisnika = entries.prezime_input.value;
     var date = entries.rodjendan_input.value;
-    var rodj_korisnika = date.split("-"); //[0] god [1] mesec [2] dan
+    var rodj_korisnika = date; //[0] god [1] mesec [2] dan
 
     //NEW NEW NEW NEW NEW NEW NEW NEW
     var interests = [];
@@ -137,15 +137,24 @@ async function registruj(entries){
      }
 
     var newUser={
+        ime:ime_korisnika,
+        prezime:prezime_korisnika,
         userName:korisnicko_ime,
         email:e_mail_korisnika,
-        password:lozinka_korisnika
+        password:lozinka_korisnika,
+        interesovanja:interests,
+        datumRodjenja:rodj_korisnika,
+
+        lajkovi:{
+            brojLajkova:0,
+            idLajkova:[],
+        }
     };
 
     try
     {
         var res=await axios.post("http://localhost:3000/api/users",newUser);
-        //console.log(res);
+        console.log(res);
     }
     catch(err)
     {
@@ -191,7 +200,7 @@ async function ValidirajRegister(){
         });
         if(t){
             await registruj(entries);
-            location.href="Pocetna.html";
+            //location.href="Pocetna.html";
         }else{
             document.getElementById("SameMailWarning").classList.remove("hidden");
         }
@@ -202,37 +211,8 @@ async function ValidirajRegister(){
     }
 }
 
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
-  }
-
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-
 async function Provera()
 {
-
-    
-
-    let x=getCookie("username");
-    console.log(x);
-
     var entries = document.getElementById("formaLogin");
     var email=entries.mail.value;
     var password=entries.lozinka.value;
