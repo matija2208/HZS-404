@@ -1,6 +1,6 @@
 GetData();
 
-async function CreateCard(post, userName) {
+function CreateCard(post, userName) {
     
     //console.log(IDs.length);
     //console.log(IDs[IDs.length-1]);
@@ -33,21 +33,23 @@ async function RenderPosts(posts) {
     });
     console.log(Posts);
     var user=await GetUser();
+    console.log(user);
     if(user !== null)
     {
-        for(let i=1;i<Posts.length;i++)
+        console.log(1);
+        for(var i=1;i<Posts.length;i++)
         {
-            console.log(tag);
-            
-                for(var k = 0; k<user.interesovanja.lenght;k++)
+            console.log(Posts[i].interesovanja);
+                user.interesovanja.every(j=>
                 {
-                    if(Posts[i].interesovanja===user.interesovanja[k])
+                    console.log(Posts[i].interesovanja, j);
+                    if(Posts[i].interesovanja.trim()===j)
                     {
-                        cards+= await CreateCard(Posts[i], user.userName);
-                        break;
+                        cards+=  CreateCard(Posts[i], user.userName);
+                        return false;
                     }
             
-                }
+                });
         }
         cardsDiv.innerHTML="";
         cardsDiv.innerHTML = cards;
@@ -58,7 +60,7 @@ async function GetData() {
     try {
         let posts = await axios.get("http://localhost:3000/api/posts");
         counter=0;
-        RenderPosts(posts.data.posts);
+        await RenderPosts(posts.data.posts);
     }catch (err) {
         console.log(err);
     }
@@ -84,6 +86,7 @@ async function GetUser()
         if(id!==null)
         {
             var user = await axios.get(link);
+            console.log(user.data.user);
             return user.data.user;
         }
         else
