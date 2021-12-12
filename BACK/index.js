@@ -78,7 +78,6 @@ app.use(cors());
 
                         opisLokacije:req.body.info.lokacija.opisLokacije
                     },
-                    telefon:req.body.info.telefon
                 },
                 opisPosta:req.body.opisPosta,
                 interesovanja:req.body.interesovanja,
@@ -139,8 +138,6 @@ app.use(cors());
                 newPost.info.lokacija.latituda=req.body.info.lokacija.latituda;
 
                 newPost.info.lokacija.opisLokacije=req.body.info.lokacija.opisLokacije;
-                    
-                newPost.info.telefon=req.body.info.telefon;
 
             newPost.opisPosta=req.body.opisPosta;
             newPost.interesovanja=req.body.interesovanja;
