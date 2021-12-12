@@ -1,8 +1,6 @@
 async function putData(post)
 {
     const cardsDiv = document.querySelector(".ostatak");
-    var txt="";
-    post.interesovanja.forEach(i => txt+=i+", ");
 
     var idKorisnika = localStorage.getItem("id");
 
@@ -22,14 +20,14 @@ async function putData(post)
     <h2 class="opisBitno"><b><i class="fas fa-map-marker-alt"></i> Opis lokacije: ${post.info.lokacija.opisLokacije}</b></h2>
     ${min}
     ${max}
-    <h2 class="opisBitno"><b><i class="fab fa-angellist"></i> Tip događaja: ${txt}</b></h2>
+    <h2 class="opisBitno"><b><i class="fab fa-angellist"></i> Tip događaja: ${post.interesovanja}</b></h2>
     <h2 class="opisBitno"><b>Opis događaja:</b></h2><br>
     <p id="opisBitnoSastojci">
         <i>${post.opisPosta}</i>
     </p>
     </li><br>
     
-    <button name="hidden_buttons" class="delete-button hidden" id="button1" onclick = "GoToUpdate('${location.search.substring(1)}')">Update <i class="fas fa-pencil-alt"></i> </button>
+    <button name="hidden_buttons" class="delete-button hidden" id="button1" onclick = "location.href='update.html?'+location.search.substring(1)">Update <i class="fas fa-pencil-alt"></i> </button>
     <button name="hidden_buttons" class="delete-button hidden" id="button2" onClick = "obrisi()">&nbsp;🗑️&nbsp;</button>
     <br>
     <br>

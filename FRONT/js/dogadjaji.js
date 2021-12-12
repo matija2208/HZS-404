@@ -50,14 +50,11 @@ async function RenderPosts(posts, tag="") {
         }
         else
         {
-            console.log(tag);
-            for(var j = 0; j < Posts[i].interesovanja.length; j++)
-            {
-                if(Posts[i].interesovanja[j]===tag)
+            
+                if(Posts[i].interesovanja===tag)
                 {
                     cards+= await CreateCard(Posts[i]);
                 }
-            }
         }
     }
     cardsDiv.innerHTML="";

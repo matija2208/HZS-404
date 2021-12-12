@@ -38,20 +38,20 @@ async function RenderPosts(posts) {
         for(let i=1;i<Posts.length;i++)
         {
             console.log(tag);
-            for(var j = 0; j < Posts[i].interesovanja.length; j++)
-            {
+            
                 for(var k = 0; k<user.interesovanja.lenght;k++)
                 {
-                    if(Posts[i].interesovanja[j]===user.interesovanja[k])
+                    if(Posts[i].interesovanja===user.interesovanja[k])
                     {
                         cards+= await CreateCard(Posts[i], user.userName);
+                        break;
                     }
+            
                 }
-            }
         }
+        cardsDiv.innerHTML="";
+        cardsDiv.innerHTML = cards;
     }
-    cardsDiv.innerHTML="";
-    cardsDiv.innerHTML = cards;
 }
 
 async function GetData() {
@@ -75,7 +75,8 @@ async function GetUserData(id) {
     }
 }
 
-async function GetUser() {
+async function GetUser() 
+{
     var id=localStorage.getItem("id");
     var link = "http://localhost:3000/api/users/"+id;
     console.log(id);

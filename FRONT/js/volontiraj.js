@@ -36,13 +36,11 @@ async function RenderPosts(posts) {
     for(let i=1;i<Posts.length;i++)
     {
         console.log(tag);
-        for(var j = 0; j < Posts[i].interesovanja.length; j++)
-        {
-            if(Posts[i].interesovanja[j]===tag)
+        
+            if(Posts[i].interesovanja===tag)
             {
                 cards+= await CreateCard(Posts[i]);
             }
-        }
     }
     cardsDiv.innerHTML="";
     cardsDiv.innerHTML = cards;

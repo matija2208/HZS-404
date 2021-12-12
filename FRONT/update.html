@@ -104,64 +104,14 @@
                 <h1 class="formHeadings">Kratak naziv lokacije: </h1>
                 <input class="formInput" id="naziv_lokacije_input" type="text" placeholder="Konkretan naziv mesta gde se nalazite, npr. park u centru grada:"/>
                 <br><br><br>
-                <input type="button" class="add-button" id="dodaj_dogadjaj" value="OBJAVI DOGAĐAJ"/>
+                <input type="button" class="add-button" id="dodaj_dogadjaj" value="UPDATEUJ DOGAĐAJ"/>
             </form>
         </div>
-
-    <script>
-    function initMap(){
-        const cuprija = { lat: 43.9336, lng: 21.3710 };
-        const map = new google.maps.Map(
-        document.getElementById("map"),{
-            zoom: 17,
-            center: cuprija,
-            styles: 
-            [
-  {
-    "featureType": "poi.government",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.government",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  }
-]
-        }
-        );
-
-        var marker = new google.maps.Marker({
-            position: {lat:43.93370754259888, lng:21.371057629006582},
-            map:map,
-        });
-
-        function setMarker(coordSettings){
-            var latlng = new google.maps.LatLng(coordSettings.coords.lat(),coordSettings.coords.lng());
-            
-            marker.setPosition(latlng);
-        }
-
-        google.maps.event.addListener(map, 'click', function(event){
-            setMarker({coords:event.latLng});
-        });
-
-        document.getElementById("dodaj_dogadjaj").addEventListener('click',() => PostaviDogadjaj(marker));
-        }
-    </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhBlZTUXsJUTkTqOXXuTdqY6CQoqE8nUM&callback=initMap&libraries=&v=weekly" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/imgur.js"></script>
-    <script src="js/objaviDogadjaj.js"></script>
+    <script src="js/update.js"></script>
     <script src="js/nav.js"></script>
   </main> 
 </body>
