@@ -85,3 +85,19 @@ body {
   padding: 20px;
   background-color: #e54b4bd5;
 }
+
+#ulog{
+  font-size: 11px;
+  list-style: none;
+  margin-top: 35px;
+}
+#kor{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#odj{
+  border: 0;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 5px;
+}
