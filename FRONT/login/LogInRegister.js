@@ -129,12 +129,15 @@ async function registruj(entries){
     //NEW NEW NEW NEW NEW NEW NEW NEW
     var interests = [];
     var boxes = document.getElementsByClassName("box");
-    
+    var counter=0;
     for(var i=0; i<boxes.length; i++) {
         if(boxes[i].checked == true){
-            interests[i]=boxes[i].name;
+            interests[counter]=boxes[i].name;
+            counter++;
         }
      }
+
+     console.log(interests);
 
     var newUser={
         ime:ime_korisnika,
