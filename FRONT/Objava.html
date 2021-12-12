@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/styleProjecting.css" rel="stylesheet">
+    
+</head>
+<body>
+    <section>
+        <div class="mainFormDiv">
+            <div class="FormTitleDiv"><h1 class="formTitle">Objavite događaj: </h1></div>
+            
+            <form id="mainForm">
+                <h1 class="formHeadings">Postavite oznaku gde želite da održite događaj: </h1>
+                <div id="mapholder">
+                    <div id="map" style="height: 100%;"></div>
+                </div>
+                <br><br>
+                <h1 class="formHeadings">Naziv događaja: </h1>
+                <input class="formInput" id="naziv_dogadjaja_input" type="text" placeholder="Naziv događaja koji će se odvijati:"/>
+                <br>
+                <h1 class="formHeadings">Tip događaja: </h1>
+                <select class="formInput" id="tip_dogadjaja_select">
+                    <option value="fudbal">Fudbal</option>
+                    <option value="kosarka">Košarka</option>
+                    <option value="odbojka">Odbojka</option>
+                    <option value="rukomet">Rukomet</option>
+                    <option value="badminton">Badminton</option>
+                    <option value="sah">Šah</option>
+                    <option value="stonitenis">Stoni tenis</option>
+                    <option value="gimnastika">Gimnastika</option>
+                    <option value="tenis">Tenis</option>
+                    <option value="predstava">Gluma</option>
+                    <option value="likovno">Likovne umetnosti</option>
+                    <option value="ples">Ples</option>
+                    <option value="okupljanja">Okupljanja</option>
+                </select>
+                <br>
+                <h1 class="formHeadings">Datum odvijanja događaja: </h1>
+                <input class="formInput" id="datum_dogadjaja_input" type="date"/>
+                <br>
+                <h1 class="formHeadings">Vreme odvijanja događaja: </h1>
+                <input class="formInput" id="vreme_dogadjaja_input" type="time"/>
+                <br>
+                <h1 class="formHeadings">Kraci opis događaja:</h1>
+                <textarea class="formInput " id="opis_dogadjaja_input" placeholder="Ukratko opišite događaj koji ćete održati:"></textarea>
+                <br>
+                <h1 class="formHeadings">Minimalni broj godina, i maksimalni broj godina učesnika (opciono): </h1>
+                <input class="formInput" id="min_god_dogadjaja_input" type="number"/>
+                <br>
+                <input class="formInput" id="max_god_dogadjaja_input" type="number"/>
+                <br>
+                <h1 class="formHeadings">Kratak naziv lokacije: </h1>
+                <input class="formInput" id="naziv_lokacije_input" type="text" placeholder="Konkretan naziv mesta gde se nalazite, npr. park u centru grada:"/>
+                <br><br><br>
+                <input type="button" class="add-button" id="dodaj_dogadjaj" value="OBJAVI DOGAĐAJ"/>
+            </form>
+        </div>
+    </section>
+    <script>
+    function initMap(){
+        const cuprija = { lat: 43.9336, lng: 21.3710 };
+        const map = new google.maps.Map(
+        document.getElementById("map"),{
+            zoom: 17,
+            center: cuprija,
+            styles: 
+            [
+  {
+    "featureType": "poi.government",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.government",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+]
+        }
+        );
+
+        var marker = new google.maps.Marker({
+            position: {lat:43.93370754259888, lng:21.371057629006582},
+            map:map,
+        });
+
+        function setMarker(coordSettings){
+            var latlng = new google.maps.LatLng(coordSettings.coords.lat(),coordSettings.coords.lng());
+            
+            marker.setPosition(latlng);
+        }
+
+        google.maps.event.addListener(map, 'click', function(event){
+            setMarker({coords:event.latLng});
+        });
+
+        document.getElementById("dodaj_dogadjaj").addEventListener('click',() => PostaviDogadjaj(marker));
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhBlZTUXsJUTkTqOXXuTdqY6CQoqE8nUM&callback=initMap&libraries=&v=weekly" defer></script>
+
+    <script src="js/objaviDogadjaj.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.entryform{
+    height: 1500px;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.formTitle{
+    width: 100%;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    font-size: 50px;
+  vertical-align: middle;
+  line-height: 90px;  
+}
+
+.mainFormDiv{
+    background-color: #E54B4B;
+    margin: 0 auto;
+    display: block;
+    overflow-x: auto;
+    height: 2300px;
+    width: 75%;
+}
+
+.formInput{
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    outline: none;    
+    padding: 5px;
+    border-radius:5px ;
+}
+
+#mapholder{
+    height:60vh; 
+    width:60vw; 
+    margin-left: auto; 
+    margin-right: auto; 
+    
+}
+
+.formHeadings{
+    color: white;
+    text-align: left;
+    vertical-align: middle;
+    padding-top: 25px; 
+    margin-left: 4.25%;
+}  
+
+.add-button{
+    display: block;
+    text-align: center;
+    border: 5px solid white;
+    height: 25vh;
+    width: 40vw;
+    background-color:#fc9595;
+    color:white;
+    font-size: 130%;
+    outline: none;
+    margin: 0 auto;
+    transition: all 0.25s ease;
+    border-radius: 5px;
+  }
+
+#opis_dogadjaja_input{
+    resize: vertical;
+    height: 200px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    max-height: 600px;
+    scrollbar-width: thin;
+}
+
+@media screen and (max-width:750px) {
+    #mapholder{
+        height:70vh; 
+        width:70vw; 
+    }
+}
+
+@media screen and (max-width:380px) {
+    #mapholder{
+        height:70vh; 
+        width:70vw; 
+    }
+}
+
+.add-button:hover {
+    background-color: #fac3ad;
+    color: white;
+    border: 5px solid white;
+  }
