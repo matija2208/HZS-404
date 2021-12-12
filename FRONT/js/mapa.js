@@ -3,12 +3,12 @@ async function generatePoint(post)
     ///////////////////////
     //mihina Funkcija//////
     ///////////////////////
-    var id=post._id;
-    var longituda=post.info.lokacija.longituda;
-    var latituda=post.info.lokacija.latituda;
-    var ime_lokacije=post.info.lokacija.opisLokacije;
-    var datum=post.info.vreme.datum;
-    var vreme=post.info.vreme.sati;
+    var id = post._id;
+    var longituda = post.info.lokacija.longituda;
+    var latituda = post.info.lokacija.latituda;
+    var ime_lokacije = post.info.lokacija.opisLokacije;
+    var datum = post.info.vreme.datum;
+    var vreme = post.info.vreme.sati;
 
     //linija za query:
     //  locatio.href="Prikaz-aktivnosti.html/?"+id
@@ -16,7 +16,7 @@ async function generatePoint(post)
 
 async function RenderPosts(posts, tag)
 {
-    posts.forEach(i => {
+    posts.forEach(async i => {
         if(i.interesovanja===tag)
         {
             await generatePoint(i);
