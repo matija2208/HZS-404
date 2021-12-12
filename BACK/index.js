@@ -212,6 +212,8 @@ app.use(cors());
 
                 datumRodjenja:req.body.datumRodjenja,
 
+                odobren:req.body.odobren,
+
                 lajkovi:{
                     brojLajkova:req.body.lajkovi.brojLajkova,
                     idLajkova:req.body.lajkovi.idLajkova
@@ -220,7 +222,7 @@ app.use(cors());
 
             const savedUser=await newUser.save();
 
-            link="Pocetna.html"+"?"+savedUser._id;
+            link="C:/Users/matij/Documents/programs/HZS-404/FRONT/"+"Pocetna.html/?"+savedUser._id;
             mailOptions={
                 to : savedUser.email,
                 subject : "Please confirm your Email account",
@@ -263,6 +265,8 @@ app.use(cors());
             editedUser.interesovanja=req.body.interesovanja;
 
             editedUser.datumRodjenja=req.body.datumRodjenja;
+
+            editedUser.odobren=req.body.odobre;
 
             editedPost.lajkovi.brojLajkova=req.body.lajkovi.brojLajkova;
             editedUser.lajkovi.idLajkova=req.body.lajkovi.idLajkova;

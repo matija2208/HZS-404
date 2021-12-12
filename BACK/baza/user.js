@@ -49,6 +49,11 @@ const UserSchema=new mongoose.Schema({
         required:true,
     },
 
+    odobren:{
+        type:Boolean,
+        required:true
+    },
+
     lajkovi:LajkoviSchema
 });
 

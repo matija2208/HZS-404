@@ -144,7 +144,7 @@ async function registruj(entries){
         password:lozinka_korisnika,
         interesovanja:interests,
         datumRodjenja:rodj_korisnika,
-
+        odobren:false,
         lajkovi:{
             brojLajkova:0,
             idLajkova:[],
@@ -153,8 +153,11 @@ async function registruj(entries){
 
     try
     {
+        var path="C:\\Users\\matij\\Documents\\programs\\HZS-404\\FRONT\\Pocetna.html";
         var res=await axios.post("http://localhost:3000/api/users",newUser);
+        
         console.log(res);
+
     }
     catch(err)
     {
@@ -200,7 +203,7 @@ async function ValidirajRegister(){
         });
         if(t){
             await registruj(entries);
-            //location.href="Pocetna.html";
+            location.href="login.html";
         }else{
             document.getElementById("SameMailWarning").classList.remove("hidden");
         }
@@ -238,7 +241,7 @@ async function Provera()
             localStorage.setItem("id",id);
             console.log(localStorage.getItem("id"));
         }
-        location.href="Pocetna.html";
+        location.href="../Pocetna.html";
     }
     else
     {
