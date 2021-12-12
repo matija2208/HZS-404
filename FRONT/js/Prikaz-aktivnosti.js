@@ -6,6 +6,9 @@ async function putData(post)
 
     var idKorisnika = localStorage.getItem("id");
 
+    var min=(post.godine.minimum===-1)?"":`<h2 class="opisBitno"><b><i class="fas fa-arrow-down"></i> Minimalne godine: ${post.godine.minimum}</b></h2>`;
+    var max=(post.godine.maximum===-1)?"":`<h2 class="opisBitno"><b><i class="fas fa-arrow-up"></i> Maksimalne godine: ${post.godine.maximum}</b></h2>`;
+
     var src=`
     <div class="prostor">
     <div class="slika"><img id="slika" src="${post.slika}"></div>
@@ -17,8 +20,8 @@ async function putData(post)
     <h2 class="opisBitno"><b><i class="fas fa-calendar-alt"></i> Datum događaja: ${post.info.vreme.datum}</b></h2>
     <h2 class="opisBitno"><b><i class="fas fa-stopwatch"></i> VREME događaja: ${post.info.vreme.sati}</b></h2>
     <h2 class="opisBitno"><b><i class="fas fa-map-marker-alt"></i> Opis lokacije: ${post.info.lokacija.opisLokacije}</b></h2>
-    <h2 class="opisBitno"><b><i class="fas fa-arrow-down"></i> Minimalne godine: ${post.godine.minimum}</b></h2>
-    <h2 class="opisBitno"><b><i class="fas fa-arrow-up"></i> Maksimalne godine: ${post.godine.maximum}</b></h2>
+    ${min}
+    ${max}
     <h2 class="opisBitno"><b><i class="fab fa-angellist"></i> Tip događaja: ${txt}</b></h2>
     <h2 class="opisBitno"><b>Opis događaja:</b></h2><br>
     <p id="opisBitnoSastojci">
@@ -66,6 +69,7 @@ async function obrisi()
 function showButtons(post){
     var idname = "id";
     var loginId = localStorage.getItem(idname);
+    console.log(loginId, post.idKorisnika);
     if(loginId.trim() === post.idKorisnika.trim()){
         const buttons = document.getElementsByName("hidden_buttons");
 

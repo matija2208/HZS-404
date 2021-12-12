@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/styleProjecting.css" rel="stylesheet">
 
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/styleup.css" rel="stylesheet">
+    <link href="css/mobile-style.css" rel="stylesheet">
+  
+
     <link rel="stylesheet" href="css/style-stranice.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <title>Objava</title>
@@ -25,7 +31,7 @@
               <img src="../MEDIE/HZS4AKTIVNOSTLOGOBELO.png" width="100%" alt="">
           </div>
           <div class="linija"></div>
-          <div class="blok">
+          <div class="blok" id="prijavi_regist">
             <a href="login/login.html"><i class="fas fa-user"></i> Login</a><br>
             <a href="login/Register.html"><i class="fas fa-user-plus"></i> Register</a>
           </div>
@@ -90,6 +96,10 @@
                 <br>
                 <input class="formInput" id="max_god_dogadjaja_input" type="number"/>
                 <br>
+                <div class="dropzone">
+                  <div class="info"></div>
+                </div>
+                <br>
                 <h1 class="formHeadings">Kratak naziv lokacije: </h1>
                 <input class="formInput" id="naziv_lokacije_input" type="text" placeholder="Konkretan naziv mesta gde se nalazite, npr. park u centru grada:"/>
                 <br><br><br>
@@ -149,7 +159,9 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhBlZTUXsJUTkTqOXXuTdqY6CQoqE8nUM&callback=initMap&libraries=&v=weekly" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/imgur.js"></script>
     <script src="js/objaviDogadjaj.js"></script>
+    <script src="js/nav.js"></script>
   </main> 
 </body>
 </html>
