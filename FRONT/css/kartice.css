@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+   :root{
+        --PurpleMain: #E54B4B;
+        --PurpleFaint: rgb(137, 168, 177);
+        --WhiteMain: #FFF8F0;
+        --PurpleRecipeCard: rgb(104, 42, 42);
+    }
+    
+    *{
+        font-family: 'Electrolize', sans-serif;
+    }
+
+.recepti{
+    display: inline-block;
+    margin: 0px 0px 100px 15px;
+    height: 350px;
+    width: 300px;
+} 
+#kartica{
+    background-image: url("../../MEDIE/sah.jpg"); 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    height: 360px; 
+    border-radius: 10px 10px 0px 0px;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5px;
+    height: 420px;
+    margin: 50px;
+
+}
+    
+.card-container {
+    flex: 0 0 240px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+    
+    .DifficultyName{
+        position: relative;
+        display: inline-flex;
+        color: var(--PurpleRecipeCard);
+        font-size: 20px;
+        line-height: 22px;
+        vertical-align: 10%;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 5px;
+
+    }
+
+    #CardDifficulty{
+        height: 20px;
+    }
+
+    .ActiveName{
+        padding-top: 10px;
+        position: relative;
+        display: inline-flex;
+        color: var(--WhiteMain);
+        font-size: 20px;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .ReceptImg{
+        background-image: url("../kartice/1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 360px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #CardLower{
+        background-color: var(--PurpleMain);
+        border-radius: 0px 0px 10px 10px;
+        height: 40px;
+    }
+
+    #RecipeInfo{
+        background-color: var(--PurpleRecipeCard);
+        width:100%;
+        height:250px;
+        position:relative;
+        z-index: -5;
+    }
+
+    .RecipeText{
+        position: relative;
+        display: block;
+        color: var(--PurpleMain);
+        font-size: 18px;
+        line-height: 22px;
+        align-items: center;
+        text-align: center;
+        overflow-wrap: break-word;
+        width:240px;
+        height:250px;
+    }
+
+    #RecipeInfoPad{
+        width: 100%;
+        height: 110px;
+        position:relative;
+        z-index: -5;
+
+    }
+
+
+    

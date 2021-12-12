@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style-stranice.css">
+    <!-- <link rel="stylesheet" href="css/Pocetna_css.css"> -->
+    <link rel="stylesheet" href="css/kartice.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Volontiranje</title>
+</head>
+<body>
+        <main id="main" class="main">
+                <input type="checkbox" id="check" />
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                </label>
+                <br><br><br><br><br>
+                <div class="sidebar">
+                    <div class="blok centar">
+                        <img src="../MEDIE/HZS4AKTIVNOSTLOGOBELO.png" width="100%" alt="">
+                    </div>
+                    <div class="linija"></div>
+                    <div class="blok">
+                            <a href="#"><i class="fas fa-user"></i> Login</a><br>
+                            <a href="#"><i class="fas fa-user-plus"></i> Register</a>
+                    </div>
+                    <div class="linija"></div>
+                    <div class="blok">
+                            <a href="Pocetna.html"><i class="fas fa-home"></i> Početna</a>
+                    </div>
+                    <div class="linija"></div>
+                    <div class="blok">
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> Mapa</a><br>
+                            <a href="preporuceno.html"><i class="fas fa-check"></i> Preporučeno</a><br>
+                            <a href="dogadjaji.html"><i class="fas fa-users" ></i> Svi dogadjaji</a><br>
+                            <a href="volonteri.html"><i class="fas fa-plus-circle"></i> Volonteri</a>
+                    </div>
+                    <div class="linija"></div>
+                    <div class="blok">
+                            <a href="oNama.html"><i class="far fa-address-card"></i> O nama</a>
+                    </div>
+                </div>
+    <div class="slideshow-container">
+            <div class="mySlides fade dot" id="slikaMenja">
+                    <div class="stranice-div">
+                            <div class="cards">
+                                    <div class="card-container" id="${post._id}" onclick="GoToRecipe(this.id)">
+                                        <div id="kartica">
+                                        </div>
+                                        <div id="CardLower" class = "CardAnimated">
+                                            <span class="ActiveName">Šah</span> 
+                                                        
+                                        </div>
+                                        <div id = "CardDifficulty" class = "CardAnimated">
+                                            <span class="DifficultyName">Autor objave: Dule</span><br>
+                                        </div>
+                                    </div> 
+                              </div>
+                    </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,13 +1,15 @@
 
 :root{
-    --boja: #E54B4B;
-    --svetlaboja: #FFA987;
-    --font_boja: #bb5353;
+    --boja: /*#E54B4B*/#5B7D86;
+    --svetlaboja: /*#FFA987*/rgb(137, 168, 177);
+    --font_boja: /*#bb5353*/rgb(22, 76, 92);
 }
 
 .blok{
     background-color: var(--boja);
     padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .linija{
@@ -29,6 +31,7 @@
     width: 250px;
     height: 100%;
     transition: all 0.5s ease;
+    z-index: 2;
     /* background-color: #042331; */
   }
 
@@ -117,4 +120,28 @@
     align-items: center;
     justify-content: center;
 
+  }
+  
+.slideshow-container {
+  height: 100%;
+  position: relative;
+}
+
+.mySlides {
+  height: 100%;
+}
+.dot {
+  transition: background-color 0.6s ease;
+  overflow-x: hidden;
+  height: 100%;
+}
+.stranice-div{
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  display: inline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
   }

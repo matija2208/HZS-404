@@ -14,7 +14,8 @@ font-size: 50px;
 font-family: 'Electrolize', sans-serif;
 padding: 20px;
 background-color: var(--PurpleMain);
-border: 5px solid var(--PurpleMain);
+border: 5px solid #5B7D86;
+border-radius: 5px
 
 }
 
@@ -33,6 +34,7 @@ margin-right: auto;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
+
 }
 
 .ime{
@@ -74,6 +76,7 @@ position: relative;
 width: 300px;
 height: 400px;
 background: none;
+margin-bottom: 50px;
 }
 
 .kartica{
@@ -85,6 +88,7 @@ height: 100%;
 border-radius: 10px;
 transform-style: preserve-3d;
 transition: all 1s ease;
+
 }
 
 .kartica:hover{
@@ -209,7 +213,7 @@ text-align: center;
 .text{
   padding: 30px;
   background: var(--PurpleMain);
-  color: #cbeef8/*#FFEBD6*/;
+  color: white/*#FFEBD6*/;
   font-size: 20px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
   font-family: 'Electrolize', sans-serif;
