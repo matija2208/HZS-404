@@ -33,6 +33,11 @@ const LokacijaSchema=new mongoose.Schema({
 const InfoSchema=new mongoose.Schema({
     vreme:VremeSchema,
     lokacija:LokacijaSchema,
+    telefon:{
+        type:String,
+        trim:true,
+        required:true
+    }
 });
 
 const GodineSchema=new mongoose.Schema({
@@ -63,6 +68,11 @@ const PostSchema=new mongoose.Schema({
         trim:true,
         required:true
     },
+    interesovanja:[{
+        type:String,
+        trim:true,
+        required:true,
+    }],
     godine:GodineSchema,
 
     idKorisnika:{

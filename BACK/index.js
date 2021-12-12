@@ -4,7 +4,17 @@ const connect_baza = require("./baza/baza");
 const post = require("./baza/post");
 const user = require("./baza/user");
 const cors = require("cors");
+const mailer=require("nodemailer");
+const xoauth2 = require('xoauth2');
 const PORT = 3000;
+
+var smtpTransport = mailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: 'tim404.hzs@gmail.com',
+        pass: "Tim404hzs"
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server slusa na portu: ${PORT}`);
@@ -67,9 +77,11 @@ app.use(cors());
                         latituda:req.body.info.lokacija.latituda,
 
                         opisLokacije:req.body.info.lokacija.opisLokacije
-                    }
+                    },
+                    telefon:req.body.info.telefon
                 },
                 opisPosta:req.body.opisPosta,
+                interesovanja:req.body.interesovanja,
                 godine:{
                     minimum:req.body.godine.minimum,
                     maximum:req.body.godine.maximum
@@ -115,7 +127,6 @@ app.use(cors());
         try{
             const postId = req.params.id;
             const newPost = await post.findById(postId);
-            const postProp = req.params.prop;
 
             newPost.nazivPosta=req.body.nazivPosta;
 
@@ -129,8 +140,10 @@ app.use(cors());
 
                 newPost.info.lokacija.opisLokacije=req.body.info.lokacija.opisLokacije;
                     
-            newPost.opisPosta=req.body.opisPosta;
+                newPost.info.telefon=req.body.info.telefon;
 
+            newPost.opisPosta=req.body.opisPosta;
+            newPost.interesovanja=req.body.interesovanja;
                 newPost.godine.minimum=req.body.godine.minimum;
                 newPost.godine.maximum=req.body.godine.maximum;
 
@@ -188,7 +201,6 @@ app.use(cors());
 
     app.post("/api/users/", async function(req,res){
         try{
-
             const newUser=new user({
                 ime:req.body.ime,
                 prezime:req.body.prezime,
@@ -207,6 +219,22 @@ app.use(cors());
             });
 
             const savedUser=await newUser.save();
+
+            link="Pocetna.html"+"?"+savedUser._id;
+            mailOptions={
+                to : savedUser.email,
+                subject : "Please confirm your Email account",
+                html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>" 
+            }
+            smtpTransport.sendMail(mailOptions, function(error, response){
+                if(error){
+                    console.log(error);
+                res.end("error");
+                }else{
+                    console.log("Message sent: " + JSON.stringify(response));
+                res.end("sent");
+                 }
+            });
 
             res.send({
                 uspesnost:true,
@@ -238,7 +266,7 @@ app.use(cors());
 
             editedPost.lajkovi.brojLajkova=req.body.lajkovi.brojLajkova;
             editedUser.lajkovi.idLajkova=req.body.lajkovi.idLajkova;
-            
+
             const updatedUser=await editedUser.save();
             res.send({
                 uspesnost:true,

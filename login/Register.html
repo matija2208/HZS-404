@@ -11,38 +11,86 @@
     <div class="log-box">
         <div class='signup'>
           <br>
-          <img src="HZS4AKTIVNOSTLOGOBELO.png" width="30%" height="30%">
-          <h1 class="sing_h1">REGISTRUJ SE</h1><br>
+          <img class="centerImg" src="HZS4AKTIVNOSTLOGOBELO.png" width="30%" height="30%">
+          <h1 class=" sing_h1">REGISTRUJ SE</h1><br>
            <form id="forma">
              <!-- IME-->
              <input type='text' id="ime_input" placeholder='Ime:'  />
-             <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
+             <span class="RegexWarning hidden" id="ErrorImeWarning"> Pogrešan unos.</span>
              <input type='text' id="prezime_input" placeholder='Prezime:'  />
-             <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
+             <span class="RegexWarning hidden" id="ErrorPrezimeWarning"> Pogrešan unos.</span>
             <input type='text' id="korisnicko_ime_input" placeholder='Korisničko ime:'  />
-            <span class="RegexWarning hidden" id="EmptyNameWarning"> Molimo vas da unesete korisnicko ime.</span> <br>
-            <span class="RegexWarning hidden" id="ErrorNameWarning"> Ime sme sadrzati samo slova, brojeve i moze biti do 30 karaktera dugacko, bez razmaka.</span> <br>
-            <span class="RegexWarning hidden" id="SameNameWarning"> Ovo korisnicko ime je vec zauzeto.</span><br>
-            <input type='text' id="rodjendan_input" placeholder='Unesite Vaš datum rođenja:'  />
-            <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
+            <span class="RegexWarning  hidden" id="EmptyNameWarning"> Molimo vas da unesete korisnicko ime.</span> <br>
+            <span class="RegexWarning  hidden" id="ErrorNameWarning"> Ime sme sadrzati samo slova, brojeve i moze biti do 30 karaktera dugacko, bez razmaka.</span> <br>
+            <span class="RegexWarning  hidden" id="SameNameWarning"> Ovo korisnicko ime je vec zauzeto.</span><br>
+            <h2 class="ImportantForm "> Unesite Vaš datum rođenja:</h2>
+            <input type='date' id="rodjendan_input"/>
+            <span class="RegexWarning  hidden" id="ErrorDateWarning"> Uneli ste nevažeći unos.</span>
             <br><br><br>
             <!-- MAIL-->
             <input type='text' id="mail_input" placeholder='Email:'  />
-            <span class="RegexWarning hidden" id="EmptyMailWarning"> Molimo vas da unesete e-mail adresu.</span> <br>
-            <span class="RegexWarning hidden" id="ErrorMailWarning"> Molimo vas da unesete vazecu e-mail adresu (npr. [name]@example.com).</span> <br>
-            <span class="RegexWarning hidden" id="SameMailWarning"> Nalog je vec registrovan na ovoj e-mail adresi.</span>
-            <br><br><br>
+            <span class="RegexWarning  hidden" id="EmptyMailWarning"> Molimo vas da unesete e-mail adresu.</span> <br>
+            <span class="RegexWarning  hidden" id="ErrorMailWarning"> Molimo vas da unesete vazecu e-mail adresu (npr. [name]@example.com).</span> <br>
+            <span class="RegexWarning  hidden" id="SameMailWarning"> Nalog je vec registrovan na ovoj e-mail adresi.</span>
             <!--Interesovanja-->
-            <input type='text' id="interesovanja_input" placeholder='Unesite Vaša interesovanja:'  />
-            <span class="RegexWarning hidden" id="SameNameWarning"> Pogrešan unos.</span>
+            <h2 class="ImportantForm ">Unesite vaša intersovanja:</h2>
+            <div class="CheckboxContainer" id="checkContainer">
+              <input class="box" type='checkbox' id='fudbalCheck' name='fudbal'/>
+              <label for="fudbal" class="RegexWarning ">Fudbal</label>
+              <br>
+              <input class="box" type='checkbox' id='kosarkaCheck' name='kosarka'/>
+              <label for="kosarka" class="RegexWarning ">Kosarka</label>
+              <br>
+              <input class="box" type='checkbox' id='odbojkaCheck' name='odbojka'/>
+              <label for="odbojka" class="RegexWarning ">Odbojka</label>
+              <br>
+              <input class="box" type='checkbox' id='RukometCheck' name='rukomet'/>
+              <label for="rukomet" class="RegexWarning ">Rukomet</label>
+              <br>
+              <input class="box" type='checkbox' id='BadmintonCheck' name='badminton'/>
+              <label for="badminton" class="RegexWarning ">Badminton</label>
+              <br>
+              <input class="box" type='checkbox' id='SahCheck' name='sah'/>
+              <label for="sah" class="RegexWarning ">Sah</label>
+              <br>
+              <input class="box" type='checkbox' id='StoniTenisCheck' name='stonitenis'/>
+              <label for="stonitenis" class="RegexWarning ">Stoni Tenis</label>
+              <br>
+              <input class="box" type='checkbox' id='GimnastikaCheck' name='gimnastika'/>
+              <label for="gimnastika" class="RegexWarning ">Gimnastika</label>
+              <br>
+              <input class="box" type='checkbox' id='TenisCheck' name='tenis'/>
+              <label for="tenis" class="RegexWarning ">Tenis</label>
+             
+              <br><br>
+              <input class="box" type='checkbox' id='predstavaCheck' name='predstava'/>
+              <label for="predstava" class="RegexWarning ">Predstava</label>
+              <br>
+              <input class="box" type='checkbox' id='muzikaCheck' name='muzika'/>
+              <label for="muzika" class="RegexWarning ">Muzika</label>
+              <br>
+              <input class="box" type='checkbox' id='likovnoCheck' name='likovno'/>
+              <label for="likovno" class="RegexWarning ">Likovne umetnosti</label>
+              <br>
+              <input class="box" type='checkbox' id='plesCheck' name='ples'/>
+              <label for="ples" class="RegexWarning ">Ples</label>
+              <br><br>
+
+              <input class="box" type='checkbox' id='okupljanjaCheck' name='okupljanje'/>
+              <label for="okupljanje" class="RegexWarning ">Razna Okupljanja</label>
+              <br><br>
+              <input class="box" type='checkbox' id='VoluntiranjeCheck' name='voluntiranje'/>
+              <label for="voluntiranje" class="RegexWarning ">Voluntiranje</label>
+              <br><br><br>
+            </div>
             <!-- PASS-->
             <input type='password' id="pass_input" placeholder='Lozinka:'  />
-            <span class="RegexWarning hidden" id="EmptyPassWarning"> Molimo vas da unesete lozinku vaseg naloga.</span> <br>
-            <span class="RegexWarning hidden" id="ErrorPassWarning"> Lozinka mora sadrzati najmanje 8 karaktera, jedan broj, jedno malo slovo i jedno veliko slovo.</span>
+            <span class="RegexWarning  hidden" id="EmptyPassWarning"> Molimo vas da unesete lozinku vaseg naloga.</span> <br>
+            <span class="RegexWarning  hidden" id="ErrorPassWarning"> Lozinka mora sadrzati najmanje 8 karaktera, jedan broj, jedno malo slovo i jedno veliko slovo.</span>
             <br><br><br>
             <input type='password' id="pass_repeat" placeholder='Potvrdi lozinku:'  />
-            <span class="RegexWarning hidden" id="EmptyRepeatWarning"> Molimo vas da ponovite lozinku.</span> <br>
-            <span class="RegexWarning hidden" id="ErrorRepeatWarning"> Lozinke nisu iste.</span>
+            <span class="RegexWarning  hidden" id="EmptyRepeatWarning"> Molimo vas da ponovite lozinku.</span> <br>
+            <span class="RegexWarning  hidden" id="ErrorRepeatWarning"> Lozinke nisu iste.</span>
             <br><br><br>
 
             <input class="dugme" type='button' value="REGISTRUJ SE" id="registracija" onclick="ValidirajRegister()" /><br><br><br>
@@ -54,6 +102,6 @@
 
       <!--SCRIPT IMPORT-->
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-      <script src="assets/js/LogInRegister.js"></script>
+      <script src="LogInRegister.js"></script>
 </body>
 </html>
