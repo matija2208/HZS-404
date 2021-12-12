@@ -7,7 +7,7 @@ async function CreateCard(post) {
     
     //console.log(txt);
     let card = `
-                                    <div class="card-container" id="${post._id}" onclick="GoToPost(this.id)">
+                                    <div class="card-container" id="${post._id}" onclick="location.href = 'Prikaz-aktivnosti.html' + '?' + this.id">
                                         <div id="kartica" style="background-image: ${post.slika};>
                                         </div>
                                         <div id="CardLower" class = "CardAnimated">
