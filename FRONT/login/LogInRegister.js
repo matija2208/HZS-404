@@ -132,7 +132,7 @@ async function registruj(entries){
     
     for(var i=0; i<boxes.length; i++) {
         if(boxes[i].checked == true){
-            interests.push(boxes[i].name);
+            interests[i]=boxes[i].name;
         }
      }
 

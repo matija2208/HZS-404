@@ -152,3 +152,77 @@
   justify-content: space-evenly;
   
   }
+
+  
+  .sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+    transform: rotate(180deg);
+  }
+  #drustvene_mreze{
+    margin-left: 10px;
+  }
+
+  .drustvene_mreze{
+    color: white;
+    border: 2px solid white;
+   
+   padding: 3px;
+   padding-right: 8px;
+    border-radius: 5%;
+    float: left;
+    margin: 3px;
+    display: inline;
+  }
+  .drustvene_mreze:hover{
+    background-color: white;
+    border: 2px solid white;
+  }
+  #nav-item{
+    list-style: none;
+    color:white;
+    margin-bottom: 5px;
+  }
+#nav-item #nav_user{
+  margin-left: 20px;
+  font-size: 20px;
+}
+#odjavi{
+  border: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 30px;
+  color: var(--boja);
+  border-radius: 20px;
+}
+  .nav-link {
+    margin-bottom: -2px;
+    border: none;
+    font-weight: bold;
+    color: #fff;
+  }
+  .nav-link:hover, .nav-link:focus {
+    color: #fff;
+  }
+  .nav-link.active {
+    background-color: #fff;
+  }
+  #nav-link a{
+    font-weight: bold;
+    color: #fff;
+  }
+  #nav-link a:hover, #nav-link a:focus {
+    color: #fff;
+  }
+
+  .sidebar-nav #nav-link{
+    font-size: 14px;
+    margin-right: 0 10px;
+  
+  }
+
+  .sidebar-nav .nav-link .bi-chevron-down {
+    margin-right: 0;
+    transition: transform 0.2s ease-in-out;
+  }
+  .sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+    transform: rotate(180deg);
+  }
