@@ -157,3 +157,6 @@ button:hover{
 #button2:active{
     background-color: #ff0000;
 }
+#check:checked ~ label #cancel {
+    margin-bottom: 20px;
+  }

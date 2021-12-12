@@ -81,6 +81,7 @@
   }
   
   label #btn {
+    position: sticky;
     left: 40px;
     top: 25px;
     font-size: 30px;
@@ -111,6 +112,7 @@
   
   #check:checked ~ label #cancel {
     left: 195px;
+    position: sticky;
   }
   
   #check:checked ~ section {
