@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+:root{
+    --PurpleMain: #E54B4B;
+    --PurpleFaint: rgb(255, 175, 175);
+    --WhiteMain:  #f7e4ed;
+    --PurpleRecipeCard: white;
+  }
+  *{
+    font-family: 'Electrolize', sans-serif;
+  }
+.pozadina{
+    width: 100;
+
+    color: #fff;
+    border-radius: 0px 25px 25px 0px;
+    margin-top: 60px;
+}
+.slika{
+    padding-top: 75px;
+    padding-bottom: 75px;
+    height: 600px;
+    background: var(--PurpleMain)/*#392F5A*/;
+    border-radius: 0px 250px 0px 0px;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+#slika{
+    border: 3px inset white;
+    border-radius: 10%;
+    box-shadow: 5px 5px 30px black;
+}
+@media (max-width: 830px) {
+    .slika{
+        height: 400px;
+    }
+}
+@media (max-width: 555px) {
+    .slika{
+        height: 350px;
+    }
+    #slika{
+        transform: translateX(-30px);
+    }
+}
+.prostor{
+    display: initial;
+}
+
+.opisBitnoTop{
+    color: white;
+    width: 80%;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 5%;
+    padding-top: 5%;
+    font-size: 60px;
+}
+
+.opisBitno{
+    color: white;
+    width: 80%;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 5%;
+}
+
+#opisBitnoSastojci{
+    color: white;
+    width: 80%;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+.opis{
+    color: white;
+    width: 80%;
+
+}
+.sastojci{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--PurpleMain)/*#392F5A*/;
+    border-radius: 0px 0px 250px 0px;
+}
+.lista_sastojaka{
+    color: white;
+    font-size: 20px;
+}
+.recept{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.priprema{
+    color: white;
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-button{
+    display: inline-block;
+    margin-left: 10px;
+    color: var(--PurpleMain)
+}
+
+.print-button{
+    display: inline-block;
+    margin-left: 5%;
+    color: var(--PurpleMain)
+}
+
+#user-name{
+    color: white;
+    width: 80%;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 5%;
+    padding-top: 5%;
+    margin-bottom: 10px;
+}
+
+#srce{
+    font-size:50px;
+    margin-left: 5%;
+}
+#srce .fa-heart:hover{
+    color: #c784a5;
+    cursor: pointer;
+}
+#srce .fa-heart:active{
+    color: #b35081;
+    cursor: pointer;
+}
+
+button{
+    border: 0px;
+    border-radius: 10px;
+    height: 50px;
+    transform: translateY(-10px);
+}
+button:hover{
+    background-color: var(--PurpleMain);
+    color: white;
+    transition: 0.3s ease-in-out;
+
+}
+#button2{
+    font-size: 20px;
+}
+#button2:active{
+    background-color: #ff0000;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style-stranice.css">
+    <link rel="stylesheet" href="css/prik-akt-style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <input type="checkbox" id="check" />
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <div class="blok centar">
+            <img src="../MEDIE/HZS4AKTIVNOSTLOGOBELO.png" width="100%" alt="">
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+                <a href="#"><i class="fas fa-user"></i> Login</a><br>
+                <a href="#"><i class="fas fa-user-plus"></i> Register</a>
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+            <a href="#"><i class="fas fa-home"></i> Početna</a>
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+            <a href="#"><i class="fas fa-map-marker-alt"></i> Mapa</a><br>
+            <a href="#"><i class="fas fa-check"></i> Preporučeno</a><br>
+            <a href="#"><i class="fas fa-users" ></i> Svi dogadjaji</a>
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+            <a href="#"><i class="far fa-address-card"></i> O nama</a>
+        </div>
+    </div>
+    <div class="ostatak">
+        <div class="prostor">
+            <div class="slika"><img id="slika" src="${post.slika}"></div>
+        </div> 
+        <div class="linija"></div>
+        <div class="sastojci">
+        <h1 class = "opisBitnoTop">${post.imeJela}</h1>
+        <h2 id="user-name"><i><u>Autor objave: ${await GetUserData(post.idKorisnika)}</u></i></h2>
+        <h2 class="opisBitno"><b><i class="fas fa-calendar-alt"></i> Datum događaja: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b><i class="fas fa-stopwatch"></i> VREME događaja: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b><i class="fas fa-map-marker-alt"></i> Opis lokacije: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b><i class="fas fa-street-view"></i> Lokacija: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b><i class="fas fa-arrow-down"></i> Minimalne godine: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b><i class="fas fa-arrow-up"></i> Maksimalne godine: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b><i class="fab fa-angellist"></i> Tip događaja: ${post.vremeSpremanja}</b></h2>
+        <h2 class="opisBitno"><b>Opis događaja:</b></h2><br>
+        <p id="opisBitnoSastojci">
+            <i>${txt}</i>
+        </p>
+        </li><br>
+        <button class="print-button" onClick = window.print();>Print <i class="fas fa-print"></i></button>
+        <button name="hidden_buttons" class="delete-button hidden" id="button1" onclick = "GoToUpdate('${location.search.substring(1)}')">Update <i class="fas fa-pencil-alt"></i> </button>
+        <button name="hidden_buttons" class="delete-button hidden" id="button2" onClick = "obrisi()">&nbsp;🗑️&nbsp;</button>
+        <br>
+        <br>
+        </div>
+    </div>
+</body>
+</html>
