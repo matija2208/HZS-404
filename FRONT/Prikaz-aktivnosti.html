@@ -39,31 +39,9 @@
         </div>
     </div>
     <div class="ostatak">
-        <div class="prostor">
-            <div class="slika"><img id="slika" src="${post.slika}"></div>
-        </div> 
-        <div class="linija"></div>
-        <div class="sastojci">
-        <h1 class = "opisBitnoTop">${post.imeJela}</h1>
-        <h2 id="user-name"><i><u>Autor objave: ${await GetUserData(post.idKorisnika)}</u></i></h2>
-        <h2 class="opisBitno"><b><i class="fas fa-calendar-alt"></i> Datum događaja: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b><i class="fas fa-stopwatch"></i> VREME događaja: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b><i class="fas fa-map-marker-alt"></i> Opis lokacije: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b><i class="fas fa-street-view"></i> Lokacija: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b><i class="fas fa-arrow-down"></i> Minimalne godine: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b><i class="fas fa-arrow-up"></i> Maksimalne godine: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b><i class="fab fa-angellist"></i> Tip događaja: ${post.vremeSpremanja}</b></h2>
-        <h2 class="opisBitno"><b>Opis događaja:</b></h2><br>
-        <p id="opisBitnoSastojci">
-            <i>${txt}</i>
-        </p>
-        </li><br>
-        <button class="print-button" onClick = window.print();>Print <i class="fas fa-print"></i></button>
-        <button name="hidden_buttons" class="delete-button hidden" id="button1" onclick = "GoToUpdate('${location.search.substring(1)}')">Update <i class="fas fa-pencil-alt"></i> </button>
-        <button name="hidden_buttons" class="delete-button hidden" id="button2" onClick = "obrisi()">&nbsp;🗑️&nbsp;</button>
-        <br>
-        <br>
-        </div>
+        
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/Prikaz-aktivnosti.js"></script>
 </body>
 </html>
