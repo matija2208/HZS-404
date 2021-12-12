@@ -23,16 +23,16 @@ async function isLoged()
     if(username !== "")
     {
       var nav = document.getElementById("prijavi_regist");
-      var text = `<li class="nav-item"id="nav-item">
+      var text = `<div id="ulog"><li class="nav-item"id="nav-item">
                       <i class="fas fa-user"></i>
-                      <span>KORISNIK: </span>
+                      <span id="kor">KORISNIK: </span>
                     </a>
-                  </li>
+                  </li><br>
                   <li class="nav-item"id="nav-item">
                       <span id="nav_user">${username}</span>
                     </a>
-                  </li>
-                  <button onclick = "odjaviSe()" >ODJAVI SE</button>`;
+                  </li><br>
+                  <button onclick = "odjaviSe()" id="odj">ODJAVI SE</button></div>`;
       nav.innerHTML = "";
       nav.innerHTML = text;
     }
