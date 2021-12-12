@@ -4,12 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link href="css/styleProjecting.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style-stranice.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Objava</title>
     
 </head>
 <body>
-    <section>
+  <main id="main" class="main">
+    <main id="main" class="main">
+      <input type="checkbox" id="check" />
+      <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+      </label>
+      <br><br>
+      <div class="sidebar">
+          <div class="blok centar">
+              <img src="../MEDIE/HZS4AKTIVNOSTLOGOBELO.png" width="100%" alt="">
+          </div>
+          <div class="linija"></div>
+          <div class="blok">
+            <a href="login/login.html"><i class="fas fa-user"></i> Login</a><br>
+            <a href="login/Register.html"><i class="fas fa-user-plus"></i> Register</a>
+          </div>
+          <div class="linija"></div>
+          <div class="blok">
+              <a href="Pocetna.html"><i class="fas fa-home"></i> Početna</a>
+          </div>
+          <div class="linija"></div>
+          <div class="blok">
+              <a href="#"><i class="fas fa-map-marker-alt"></i> Mapa</a><br>
+              <a href="preporuceno.html"><i class="fas fa-check"></i> Preporučeno</a><br>
+              <a href="dogadjaji.html"><i class="fas fa-users" ></i> Svi dogadjaji</a><br>
+              <a href="volonteri.html"><i class="fas fa-plus-circle"></i> Volonteri</a><br>
+              <a href="Objava.html"><i class="fas fa-plus"></i> Objavi</a>
+          </div>
+          <div class="linija"></div>
+          <div class="blok">
+              <a href="oNama.html"><i class="far fa-address-card"></i> O nama</a>
+          </div>
+      </div>
+   
         <div class="mainFormDiv">
             <div class="FormTitleDiv"><h1 class="formTitle">Objavite događaj: </h1></div>
             
@@ -59,7 +96,7 @@
                 <input type="button" class="add-button" id="dodaj_dogadjaj" value="OBJAVI DOGAĐAJ"/>
             </form>
         </div>
-    </section>
+
     <script>
     function initMap(){
         const cuprija = { lat: 43.9336, lng: 21.3710 };
@@ -113,5 +150,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhBlZTUXsJUTkTqOXXuTdqY6CQoqE8nUM&callback=initMap&libraries=&v=weekly" defer></script>
 
     <script src="js/objaviDogadjaj.js"></script>
+  </main> 
 </body>
 </html>
