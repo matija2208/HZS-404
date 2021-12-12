@@ -24,15 +24,42 @@ function everything_filled(entries){
 
 function regex_valid_name(entries){
     var pattern = /^[A-Za-z0-9]{1,30}$/;
-    var tekst = entries.ime_input.value;
+    var tekst = entries.korisnicko_ime_input.value;
     var test = tekst.match(pattern);
 
     if (test == null) {
         document.getElementById("ErrorNameWarning").classList.remove("hidden");
         valid_test = false;
     } else{
-      console.log("validirano ime korisnika...");
+      console.log("validirano korisnicko ime korisnika...");
       document.getElementById("ErrorNameWarning").classList.add("hidden");
+    }
+}
+function regex_valid_ime(entries){
+    var pattern = /^[A-Za-z0-9 ]{1,100}$/;
+    var tekst = entries.ime_input.value;
+    var test = tekst.match(pattern);
+    
+    if (test==null){
+        document.getElementById("ErrorImeWarning").classList.remove("hidden");
+        valid_test = false;
+    } else{
+        console.log("validirano ime korisnika...");
+        document.getElementById("ErrorImeWarning").classList.add("hidden");
+    }
+}
+
+function regex_valid_prezime(entries){
+    var pattern = /^[A-Za-z0-9 ]{1,100}$/;
+    var tekst = entries.prezime_input.value;
+    var test = tekst.match(pattern);
+
+    if (test==null){
+        document.getElementById("ErrorPrezimeWarning").classList.remove("hidden");
+        valid_test = false;
+    } else{
+        console.log("validirano prezime korisnika...");
+        document.getElementById("ErrorPrezimeWarning").classList.add("hidden");
     }
 }
 
@@ -91,9 +118,13 @@ function regex_valid_date(entries){
 }
 
 async function registruj(entries){
-    var korisnicko_ime = entries.ime_input.value;
+    var korisnicko_ime = entries.korisnicko_ime_input.value;
     var e_mail_korisnika = entries.mail_input.value;
     var lozinka_korisnika = entries.pass_input.value;
+    var ime_korisnika = entries.ime_input.value;
+    var prezime_korisnika = entries.prezime_input.value;
+    var date = entries.rodjendan_input.value;
+    var rodj_korisnika = date.split("-"); //[0] god [1] mesec [2] dan
 
     //NEW NEW NEW NEW NEW NEW NEW NEW
     var interests = [];
@@ -139,12 +170,15 @@ async function getData()
 async function ValidirajRegister(){
     valid_test = true;
     var entries = document.getElementById("forma");
+    regex_valid_ime(entries);
+    regex_valid_prezime(entries);
     everything_filled(entries);
     regex_valid_name(entries);
     regex_valid_mail(entries)
     regex_valid_pass(entries);
     regex_valid_repeat(entries);
     regex_valid_date(entries);
+    
 
     if(valid_test == true){
         var users = await getData();
