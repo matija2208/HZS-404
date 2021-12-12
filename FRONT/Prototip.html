@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style-stranice.css">
+    <link rel="stylesheet" href="css/styleMainMap.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="checkbox" id="check" />
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <div class="blok centar">
+            <img src="../MEDIE/HZS4AKTIVNOSTLOGOBELO.png" width="100%" alt="">
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+                <a href="#"><i class="fas fa-user"></i> Login</a><br>
+                <a href="#"><i class="fas fa-user-plus"></i> Register</a>
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+            <a href="#"><i class="fas fa-home"></i> Početna</a>
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+            <a href="#"><i class="fas fa-map-marker-alt"></i> Mapa</a><br>
+            <a href="#"><i class="fas fa-check"></i> Preporučeno</a><br>
+            <a href="#"><i class="fas fa-users" ></i> Svi dogadjaji</a>
+        </div>
+        <div class="linija"></div>
+        <div class="blok">
+            <a href="#"><i class="far fa-address-card"></i> O nama</a>
+        </div>
+    </div>
+    <div class="ostatak2">
+        <div class="mapholder">
+            <div id="map" style="height: 100%;"></div>
+        </div>
+    </div>
+
+    <script>
+        function initMap(){
+            const cuprija = { lat: 43.9336, lng: 21.3710 };
+            const map = new google.maps.Map(
+            document.getElementById("map"),{
+                zoom: 17,
+                center: cuprija,
+                styles: 
+                [
+                {
+                    "featureType": "poi.business",
+                    "elementType": "labels.text",
+                    "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                    ]
+                },
+                {
+                    "featureType": "poi.business",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                    ]
+                },
+                {
+                    "featureType": "poi.business",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                    ]
+                }
+                ]
+            }
+            );
+            
+            var markers = [
+                {
+                    coords:{
+                        lat:43.927480158887406, lng:21.372278816387812
+                    },
+                    content: '<a href="Prikaz-aktivnosti.html">Test1</a>'
+                },
+                {
+                    coords:{
+                        lat:43.939642562328096, lng:21.372663850530987
+                    },
+
+                    content: '<a href="Prikaz-aktivnosti.html">Test2</a>'
+                },
+                {
+                    coords:{
+                        lat:43.944230449272986, lng:21.38630609279889
+                    },
+
+                    content: '<a href="Prikaz-aktivnosti.html">Test3</a>'
+                }
+            ]; 
+
+                for(var i=0;i<(markers.length);i++){
+                    var marker = new google.maps.Marker({
+                        position: {lat: markers[i].coords.lat, lng:markers[i].coords.lng},
+                        map: map,
+                       content: markers[i].content
+                    })
+                        
+                        google.maps.event.addListener(marker, 'click', getInfoCallback(map, markers[i].content));
+                }
+                function getInfoCallback(map, content) {
+                var infowindow = new google.maps.InfoWindow({content: content});
+                return function() {
+                infowindow.setContent(content); 
+                infowindow.open(map, this);
+        };
+}
+                
+
+               
+            
+            /*var marker = new google.maps.Marker({
+                position: {lat:43.93370754259888, lng:21.371057629006582},
+                map:map,
+            });*/
+    
+            /*function setMarker(coordSettings){
+                var latlng = new google.maps.LatLng(coordSettings.coords.lat(),coordSettings.coords.lng());
+                
+                marker.setPosition(latlng);
+            }*/
+    
+           /* google.maps.event.addListener(map, 'click', function(event){
+                setMarker({coords:event.latLng});
+            });*/
+            }
+        </script>
+    
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhBlZTUXsJUTkTqOXXuTdqY6CQoqE8nUM&callback=initMap&libraries=&v=weekly" defer></script>
+</body>
+</html>

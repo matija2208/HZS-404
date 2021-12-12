@@ -1,0 +1,13 @@
+.ostatak2{
+  display:flex;
+  overflow-y: hidden;
+  align-items:center;
+}
+.mapholder{ 
+  height:75vh;
+  width:75vw;
+  margin: auto;
+  margin-left: 20%;
+  margin-top:5%;
+  vertical-align: middle;
+}
